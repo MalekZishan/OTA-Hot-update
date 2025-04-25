@@ -206,4 +206,4 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
 - [Supabase Docs](https://supabase.com/docs/)
 - [React Native Docs](https://reactnative.dev/docs/)
 - [Hot Updater GitHub](https://github.com/gronxb/hot-updater)
-- [Check Video how to all thing starting to ending ](https://www.youtube.com/watch?app=desktop&v=jJouZCEkXyA)
+- [Watch the video to see how to implement everything from start to finish.](https://www.youtube.com/watch?app=desktop&v=jJouZCEkXyA)
