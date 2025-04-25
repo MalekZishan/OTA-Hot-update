@@ -48,6 +48,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
 ## 📋 Setup Steps
 
 ### Step 1: Create Supabase Project
+
 1. Log in to [Supabase Dashboard](https://app.supabase.com/).
 2. Click **New Project**.
 3. Set:
@@ -60,6 +61,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
    - **Anon Key**: Long string
 
 ### Step 2: Install Hot Updater
+
 1. Go to project folder:
    ```bash
    cd path/to/MyHotUpdaterApp
@@ -70,6 +72,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
    ```
 
 ### Step 3: Configure Hot Updater
+
 1. Run setup command:
    ```bash
    npx hot-updater init
@@ -81,6 +84,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
    - Anon Key: Paste from Step 1
    - Bucket Name: e.g., `updates`
 3. Files created:
+
    - `.env`:
      ```plaintext
      HOT_UPDATER_SUPABASE_URL=https://your-project-id.supabase.co
@@ -88,14 +92,15 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
      HOT_UPDATER_SUPABASE_BUCKET_NAME=updates
      ```
    - `hot-updater.config.ts`:
+
      ```typescript
-     import { metro } from "@hot-updater/metro";
-     import { supabaseDatabase, supabaseStorage } from "@hot-updater/supabase";
-     import { defineConfig } from "hot-updater";
-     import "dotenv/config";
+     import {metro} from '@hot-updater/metro';
+     import {supabaseDatabase, supabaseStorage} from '@hot-updater/supabase';
+     import {defineConfig} from 'hot-updater';
+     import 'dotenv/config';
 
      export default defineConfig({
-       build: metro({ enableHermes: true }),
+       build: metro({enableHermes: true}),
        storage: supabaseStorage({
          supabaseUrl: process.env.HOT_UPDATER_SUPABASE_URL!,
          supabaseAnonKey: process.env.HOT_UPDATER_SUPABASE_ANON_KEY!,
@@ -109,6 +114,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
      ```
 
 ### Step 4: Secure Files
+
 1. Add `.env` to `.gitignore`:
    ```plaintext
    .env
@@ -120,6 +126,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
    ```
 
 ### Step 5: Set Up Edge Function
+
 1. In Supabase dashboard, go to **Functions**.
 2. Click **New Function**.
 3. Set:
@@ -128,16 +135,18 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
 4. Click **Save** and **Deploy**.
 
 ### Step 6: Add Hot Updater to App
+
 1. Open `App.tsx` or `App.js`.
 2. Update code:
+
    ```typescript
    import React from 'react';
-   import { HotUpdater } from 'hot-updater/react-native';
-   import { View, Text } from 'react-native';
+   import {HotUpdater} from 'hot-updater/react-native';
+   import {View, Text} from 'react-native';
 
    const App = () => {
      return (
-       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
          <Text>Hot Updater App</Text>
        </View>
      );
@@ -151,6 +160,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
      );
    }
    ```
+
 3. Run app:
    ```bash
    npx react-native run-android
@@ -161,6 +171,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
    ```
 
 ### Step 7: Deploy Update
+
 1. Change `App.tsx`:
    ```typescript
    <Text>Updated App V2</Text>
@@ -175,6 +186,7 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
    - **Database**: View metadata
 
 ## 🛠️ Troubleshooting
+
 - **Supabase CLI error**:
   - Reinstall:
     ```bash
@@ -188,8 +200,10 @@ This guide explains how to set up `hot-updater` with Supabase to add **over-the-
   - Redeploy Edge Function or check internet.
 
 ## 📚 Resources
+
 - [Hot Updater Video](https://www.youtube.com/watch?v=jJouZCEkXyA)
 - [Hot Updater Docs](https://gronxb.github.io/hot-updater/)
 - [Supabase Docs](https://supabase.com/docs/)
 - [React Native Docs](https://reactnative.dev/docs/)
 - [Hot Updater GitHub](https://github.com/gronxb/hot-updater)
+- [Check Video how to all thing starting to ending ](https://www.youtube.com/watch?app=desktop&v=jJouZCEkXyA)
